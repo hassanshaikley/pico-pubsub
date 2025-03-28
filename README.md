@@ -33,16 +33,16 @@ npm install pico-pubsub
 ```javascript
 import "pico-pubsub"
 
-const unsub = window.sub('jump', function (anything) {
+const unsub = sub('jump', function (anything) {
   console.log("someone jumped - " + anything.detail)
 });
 
-window.pub('jump', "a_user_id")
+pub('jump', "a_user_id")
 >> "someone jumped - a_user_id"
 
 unsub()
 
-window.pub('jump', "another_user_id")
+pub('jump', "another_user_id")
 >> Nothing happens now
 ```
 
