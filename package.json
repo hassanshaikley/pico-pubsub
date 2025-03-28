@@ -1,5 +1,5 @@
 {
-  "name": "tiniest-pubsub",
+  "name": "pico-pubsub",
   "module": "index.js",
   "type": "module",
   "private": true,
