@@ -1,0 +1,9 @@
+{
+  "name": "tiniest-pubsub",
+  "module": "index.js",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "npx esbuild index.js --bundle --minify --outfile=dist/bundle.js"
+  }
+}
