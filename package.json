@@ -1,8 +1,8 @@
 {
   "name": "pico-pubsub",
-  "module": "index.js",
+  "main": "dist/bundle.js",
   "type": "module",
-  "private": true,
+  "version": "0.0",
   "scripts": {
     "build": "npx esbuild index.js --bundle --minify --outfile=dist/bundle.js"
   }
