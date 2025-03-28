@@ -7,9 +7,9 @@ The competition is more than twice the size:
 - [`nano-pubsub`](https://github.com/bjoerge/nano-pubsub)
 - [`tiny-pubusb`](https://github.com/LukeWood/tiny-pubsub)
 
-Built with JS13K games in mind.
+I wrote [this article](https://hassanshaikley.medium.com/pubsub-in-half-a-kilobyte-b6cf6a66d674) a while back. But I realized...why not just publish the code?
 
-I am making it for absolutely minimal js creations such as [cred](https://cred.fly.dev/html/index.html).
+Built with JS13K games in mind. Such as [cred](https://cred.fly.dev/html/index.html) which is unfortunately in need of some weight loss soon, it is almost 25KB after all.
 
 ### Usage
 
