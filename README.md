@@ -28,6 +28,10 @@ window.pub = (n, d) => t.dispatchEvent(new CustomEvent(n, { detail: d }));
 
 ### Usage
 
+```bash
+npm install pico-pubsub
+```
+
 ```javascript
 import "pico-pubsub"
 
@@ -46,16 +50,11 @@ window.pub('jump', "another_user_id")
 
 ### Troubleshoot
 
-- Might add TS support in the future.
-
-This should fix any issues.
-
-```
+- Might add TS support in the future. For now you can use the following snippet.
+```typescript
 declare global {
-  interface Window {
-    pub: (event: string, data: any) => VoidFunction;
-    sub: (event: string, callback: (data: CustomEvent) => void) => void;
-  }
+  function pub(event: string, data: any): VoidFunction;
+  function sub(event: string, callback: (data: CustomEvent) => void): void;
 }
 ```
 
