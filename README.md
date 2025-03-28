@@ -31,7 +31,7 @@ pubSub.p('jump')
 
 Maybe I'll add TS in the future. Probably not.
 
-Also it's less effort for you to copy paste the source and change the export if you run into issues with that.
+Also it's likely less effort for you to copy paste the source and change the way its exported if you run into issues with that. I typically run all my stuff through esbuild.
 
 ### The Sauce
 
