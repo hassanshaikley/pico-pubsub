@@ -1,6 +1,6 @@
 # pico-pubsub
 
-The smallest PubSub library possible. Zero Dependencies. 160 bytes.
+The smallest PubSub library possible. Zero Dependencies. 170 bytes.
 
 The competition is more than twice the size:
 
@@ -10,6 +10,8 @@ The competition is more than twice the size:
 I wrote [this article](https://hassanshaikley.medium.com/pubsub-in-half-a-kilobyte-b6cf6a66d674) a while back. But I realized...why not just publish the code?
 
 Built with JS13K games in mind. Such as [cred](https://cred.fly.dev/html/index.html) which is unfortunately in need of some weight loss soon, it is almost 25KB after all.
+
+<sup><sub>If you have any ideas that may trim off even one single byte please share it. Create an issue! I don't mind.</sup></sub>
 
 ### Usage
 
@@ -32,6 +34,12 @@ pubSub.p('jump')
 Maybe I'll add TS in the future. Probably not.
 
 Also it's likely less effort for you to copy paste the source and change the way its exported if you run into issues with that. I typically run all my stuff through esbuild.
+
+### Prove it
+
+The following command will produce a 170b file:
+
+`npx esbuild index.js --bundle --minify --format=esm --outfile=bundle.js`
 
 ### The Sauce
 
@@ -93,7 +101,9 @@ export default function createPubSub<Message = void>(): PubSub<Message> {
 }
 ```
 
-Or [tiny-pubsub](https://github.com/LukeWood/tiny-pubsub/blob/master/pubsub.js) if you want to see two additional functions that are not critical! The agony!
+Which does slim down to `194b`...Not bad at all!
+
+Or [tiny-pubsub](https://github.com/LukeWood/tiny-pubsub/blob/master/pubsub.js) if you want to see two additional functions that are not critical! The agony! This comes in at 401b, more than twice `nano-pubsub`!
 
 ```javascript
 let subscriptions = Object.create(null);
