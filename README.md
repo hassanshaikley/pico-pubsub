@@ -1,6 +1,6 @@
 # pico-pubsub
 
-The smallest PubSub library possible. Zero Dependencies. 149b bytes.
+The smallest PubSub library possible. Zero Dependencies. 149 bytes.
 
 I wrote [this article](https://hassanshaikley.medium.com/pubsub-in-half-a-kilobyte-b6cf6a66d674) a while back. But I realized...why not just publish the code?
 
