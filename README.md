@@ -14,24 +14,28 @@ I am making it for absolutely minimal js creations such as [cred](https://cred.f
 ### Usage
 
 ```javascript
-import {p, s} from "pico-pubsub"
+import pubSub from "pico-pubsub"
 
-const unsub = s('jump', function () {
+const unsub = pubSub.s('jump', function () {
   console.log("someone jumped")
 });
 
-p('jump')
+pubSub.p('jump')
 >> "someone jumped"
 
 unsub()
 
-p('jump')
+pubSub.p('jump')
 >> Nothing happens now
 ```
 
-### The Secret
+Maybe I'll add TS in the future. Probably not.
 
-This is the entire source. [index.js](index.js)
+Also it's less effort for you to copy paste the source and change the export if you run into issues with that.
+
+### The Sauce
+
+This is the entire source ([index.js](https://github.com/hassanshaikley/pico-pubsub/blob/master/index.js)).
 
 ```javascript
 let t = new EventTarget();
