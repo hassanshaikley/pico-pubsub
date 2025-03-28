@@ -1,6 +1,6 @@
 # pico-pubsub
 
-The smallest PubSub library possible. Zero Dependencies. 163 bytes.
+The smallest PubSub library possible. Zero Dependencies. 149b bytes.
 
 I wrote [this article](https://hassanshaikley.medium.com/pubsub-in-half-a-kilobyte-b6cf6a66d674) a while back. But I realized...why not just publish the code?
 
@@ -20,10 +20,8 @@ This is the entire source ([index.js](https://github.com/hassanshaikley/pico-pub
 ```javascript
 let t = new EventTarget();
 
-window.sub = (e, c) => (
-  t.addEventListener(e, c), () => t.removeEventListener(e, c)
-);
-window.pub = (n, d) => t.dispatchEvent(new CustomEvent(n, { detail: d }));
+sub = (e, c) => (t.addEventListener(e, c), () => t.removeEventListener(e, c));
+pub = (n, d) => t.dispatchEvent(new CustomEvent(n, { detail: d }));
 ```
 
 ### Usage
@@ -51,6 +49,7 @@ window.pub('jump', "another_user_id")
 ### Troubleshoot
 
 - Might add TS support in the future. For now you can use the following snippet.
+
 ```typescript
 declare global {
   function pub(event: string, data: any): VoidFunction;
@@ -62,13 +61,13 @@ declare global {
 
 ### Prove it
 
-The following command will produce a `163b` file:
+The following command will produce a `149b` file:
 
 `npx esbuild index.js --bundle --minify --format=esm --outfile=bundle.js`
 
 ### The Competition
 
-Coming in at #2 we have [nano-pubsub](https://github.com/bjoerge/nano-pubsub/blob/main/src/index.ts) which slims down to an impressive `194b`...Not bad at all! Only ~`19%` larger.
+Coming in at #2 we have [nano-pubsub](https://github.com/bjoerge/nano-pubsub/blob/main/src/index.ts) which slims down to an impressive `194b`...Not bad at all! Only ~`30%` larger.
 
 ```typescript
 /**
