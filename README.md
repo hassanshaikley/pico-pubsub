@@ -159,3 +159,7 @@ export default {
   p: (n, d) => t.dispatchEvent(new CustomEvent(n, { detail: d })),
 };
 ```
+
+Someone on HN suggested I could return `event.detail` here and I might do that in the future.
+
+Library gets bigger but you will save space at every callsite.
