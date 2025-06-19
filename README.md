@@ -162,4 +162,4 @@ export default {
 
 Someone on HN suggested I could return `event.detail` here and I might do that in the future.
 
-Library gets bigger but you will save space at every callsite.
+Library gets marginally bigger but you will save space at every callsite.
