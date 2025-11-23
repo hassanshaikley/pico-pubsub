@@ -67,7 +67,7 @@ The following command will produce a `99b` file:
 
 #### #2
 
-[nano-pubsub](https://github.com/bjoerge/nano-pubsub/blob/main/src/index.ts) which slims down to an impressive `194b`...Not bad at all! Only ~`30%` larger.
+[nano-pubsub](https://github.com/bjoerge/nano-pubsub/blob/main/src/index.ts) which slims down to an impressive `194b`...Not bad at all! But we are looking for the absolute minimal implementation.
 
 ```typescript
 /**
@@ -116,7 +116,7 @@ export default function createPubSub<Message = void>(): PubSub<Message> {
 
 [nanoevents](https://github.com/ai/nanoevents) which compresses down to `231b`.
 
-They advertise it as 107 bytes but they are including `brotli` compression which occurs during transfer. Also when I brotli it on my end I am seeing `146b`. Not sure how they are calculating that.
+They advertise it as 107 bytes but they are including `brotli` compression which occurs during transfer. Also I am seeing `146b` after brotli on my end. Not sure how they are calculating that.
 
 ```javascript
 export let createNanoEvents = () => ({
@@ -143,7 +143,7 @@ export let createNanoEvents = () => ({
 
 #### #4
 
-[tiny-pubsub](https://github.com/LukeWood/tiny-pubsub/blob/master/pubsub.js) which brings a non critical function to the table as well as an extra function with the way it handles unsubscribing! The agony! This comes in at a whopping `401b`, more than 4x `pico-pubsub`!
+[tiny-pubsub](https://github.com/LukeWood/tiny-pubsub/blob/master/pubsub.js) which brings a non critical function to the table as well as an extra function with the way it handles unsubscribing! The agony! This comes in at a whopping `401b`, more than 4 times `pico-pubsub`!
 
 ```javascript
 let subscriptions = Object.create(null);
