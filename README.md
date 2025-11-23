@@ -10,7 +10,7 @@ Smaller than the competition.
 - [`nanoevents`](https://github.com/ai/nanoevents)
 - [`tiny-pubusb`](https://github.com/LukeWood/tiny-pubsub)
 
-Built with JS13K games in mind. Such as [cred](https://cred.fly.dev/html/index.html) which is unfortunately in need of some weight loss soon, it is almost 25KB now.
+Built with JS13K games in mind. Such as [cred](https://cred.fly.dev/html/index.html) which is unfortunately in need of some weight loss soon, as it is almost 25KB now.
 
 <sup><sub>If you have any ideas that may trim off even one single byte please share it. Create an issue! I don't mind.</sup></sub>
 
@@ -54,8 +54,6 @@ declare global {
   function sub(event: string, callback: (data: any) => void): void;
 }
 ```
-
-- If you have export issues just copy paste and change export type.
 
 ### Prove it
 
