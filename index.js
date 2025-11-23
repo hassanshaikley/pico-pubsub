@@ -1,4 +1,3 @@
-let t = new EventTarget();
-
-sub = (e, c) => (t.addEventListener(e, c), (_) => t.removeEventListener(e, c));
-pub = (n, d) => t.dispatchEvent(new CustomEvent(n, { detail: d }));
+let t = {};
+sub = (e, c) => ((t[e] ??= new Set()).add(c), (_) => t[e].delete(c));
+pub = (e, d) => t[e]?.forEach((f) => f(d));

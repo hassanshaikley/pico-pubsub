@@ -2,6 +2,6 @@
   "name": "pico-pubsub",
   "main": "index.js",
   "type": "module",
-  "version": "0.0.8",
+  "version": "1.0.0",
   "sideEffects": true
 }
