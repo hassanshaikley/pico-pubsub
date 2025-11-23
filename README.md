@@ -20,7 +20,7 @@ This is the entire source ([index.js](https://github.com/hassanshaikley/pico-pub
 ```javascript
 let t = new EventTarget();
 
-sub = (e, c) => (t.addEventListener(e, c), () => t.removeEventListener(e, c));
+sub = (e, c) => (t.addEventListener(e, c), (_) => t.removeEventListener(e, c));
 pub = (n, d) => t.dispatchEvent(new CustomEvent(n, { detail: d }));
 ```
 
@@ -160,6 +160,4 @@ export default {
 };
 ```
 
-Someone on HN suggested I could return `event.detail` here and I might do that in the future.
-
-Library gets marginally bigger but you will save space at every callsite.
+If you want to save an additional 5 bytes remove the `let` and make `t` global. If you choose to do that then proceed with caution.
